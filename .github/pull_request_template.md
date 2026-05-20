@@ -1,98 +1,57 @@
-# Pull Request Checklist
+# Pull Request
 
 ## Summary
-<!-- What does this PR do? Why is it needed? -->
+<!-- What changed and why? -->
 
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Refactor
-- [ ] Documentation update
-- [ ] CI/CD change
-- [ ] Infrastructure / platform change
-- [ ] Security improvement
-- [ ] Dependency update
+## Linked Work Item
+<!-- Jira / incident / ticket -->
 
 ---
 
 # General Checks
 
 - [ ] PR title is clear and meaningful
-- [ ] Linked Jira / work item included
+- [ ] Linked Jira ticket
 - [ ] Self-reviewed the changes
 - [ ] No commented-out code or debug logging left behind
-- [ ] Documentation updated where required
-- [ ] CHANGELOG / release notes updated (if applicable)
-- [ ] No sensitive information, secrets, or credentials committed
-- [ ] Version numbers updated where required
 
 ---
 
-# Testing
+# Application Change
+
+## PR Author Checklist
 
 - [ ] Local testing completed
-- [ ] Existing tests pass
-- [ ] New tests added where appropriate
-- [ ] Manual validation completed
-- [ ] Edge cases considered
+- [ ] Existing functionality verified
+- [ ] Relevant tests added/updated
+- [ ] API/interface compatibility considered
+- [ ] Documentation updated if needed
+
+## Reviewer Checklist
+
+- [ ] I understand the purpose of this change
+- [ ] Testing evidence sufficient
+- [ ] No obvious regressions identified
+- [ ] Security concerns reviewed
+- [ ] Documentation/comments are sufficient
 
 ---
 
-# Kubernetes / Helm
+# Platform / Infrastructure Change
 
-- [ ] Helm templates render successfully
+## PR Author Checklist
+
+- [ ] Local testing completed
+- [ ] Crossplane lifecycle/deletion impact reviewed
 - [ ] Values schema updated if required
-- [ ] Resource requests/limits reviewed
-- [ ] Liveness/readiness probes validated
-- [ ] Labels and annotations applied consistently
-- [ ] RBAC permissions reviewed
-- [ ] NetworkPolicy reviewed (if applicable)
-- [ ] ArgoCD sync behaviour considered
-- [ ] Sync waves/order reviewed (if applicable)
 
----
+## Reviewer Checklist
 
-# Crossplane / AWS Resources
-
-- [ ] managementPolicies reviewed
-- [ ] Deletion behaviour understood and validated
-- [ ] External names and observe-only resources checked
-- [ ] IAM permissions reviewed
-- [ ] Encryption enabled where required
-- [ ] Backup/snapshot implications considered
-- [ ] Cost impact considered
-- [ ] Changes validated in lower environment first
-
----
-
-# Security
-
+- [ ] Deployment behaviour understood
+- [ ] No unintended deletion risk identified
 - [ ] Least privilege applied
-- [ ] Input validation considered
-- [ ] Sensitive logs/errors avoided
-- [ ] TLS/encryption requirements met
-- [ ] Dependency vulnerabilities reviewed
-- [ ] Authentication/authorization impacts reviewed
-
----
-
-# Observability
-
-- [ ] Logging added/updated where needed
-- [ ] Metrics exposed/updated where needed
-- [ ] Alerts reviewed or added
-- [ ] Dashboards updated if required
-
----
-
-# Deployment / Rollback
-
-- [ ] Deployment strategy considered
-- [ ] Rollback plan understood
-- [ ] Backward compatibility checked
-- [ ] Database migration impact reviewed
-- [ ] Downtime impact assessed
+- [ ] No sensitive information, secrets, or credentials committed
+- [ ] Documentation/comments are sufficient
 
 ---
 
